@@ -12,7 +12,7 @@ const Filters = (props) => {
 
     return (
         <form className="form-group" onSubmit={preventDefault} action="POST">
-            <input className="form-control" onChange={handleSearch} type="text" placeholder='Busca tu personaje' />
+            <input className="form-control shadow-lg p-3 mb-5 bg-white rounded" onChange={handleSearch} type="text" placeholder='Busca tu personaje' />
         </form>
     );
 };

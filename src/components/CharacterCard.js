@@ -9,14 +9,14 @@ class CharacterCard extends Component {
         const { id, image, name, species } = this.props.characterData
         return (
             <React.Fragment>
-                <div className="card-img-top justify-content-center ">
+                <div className="card-img-top">
                     <img className="rounded-lg mx-auto img-thumbnail" src={image} alt={`Imagen de ${name}`} />
                 </div>
-                <div>
+                <div className="card-body">
                     <Link to={`/character/${id}`}>
-                        <h2>{name}</h2>
+                        <h2 className="card-title">{name}</h2>
                     </Link>
-                    <p>{species}</p>
+                    <p className="card-text">{species}</p>
                 </div>
             </React.Fragment>
 

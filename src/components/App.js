@@ -44,7 +44,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app p-3 mb-2 bg-dark text-black" >
+      <div className="app p-3 mb-10" >
         <Header />
         <Switch>
           <Route exact path='/'>

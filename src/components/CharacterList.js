@@ -7,10 +7,10 @@ const CharacterList = props => {
     const { charactersData } = props;
     // const isCharacterDataEmpty = charactersData? <p> NO hay personajitos </p> : 
     return (
-        < main >
-            <ul clasName="list-group container ">
+        < main clasName="">
+            <ul clasName="card-group d-flex flex-wrap">
                 {charactersData.map(characterData =>
-                    <li className="card list-group-item text-center " key={characterData.id}>
+                    <li className="card" key={characterData.id}>
                         <CharacterCard characterData={characterData} />
                     </li>
                 )}
