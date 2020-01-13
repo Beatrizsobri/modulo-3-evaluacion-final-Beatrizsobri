@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import '../stylesheets/App.scss';
 import { fetchRickyMorty } from '../services/Api';
 import { Route, Switch } from 'react-router-dom';
-import Header from './Header'
-import Filters from './Filters';
-import CharacterList from './CharacterList';
-import CharacterCard from './CharacterCard'
+import Home from './Home';
+import Header from './Header';
+import CharacterDetail from './CharacterDetail';
 
 class App extends Component {
   constructor(props) {
@@ -34,23 +33,25 @@ class App extends Component {
   }
 
   renderCharacterDetail(props) {
-    const routeId = props.match.params.id;
+    const routeId = parseInt(props.match.params.id);
     const character = this.state.characters.find(item => item.id === routeId);
     if (character === undefined) {
-      return <p>Email no encontrado</p>
+      return <p>Tu personaje aún no ha sido creado en este universo</p>
     } else {
-      return <CharacterCard />
+      return <CharacterDetail character={character} />
     }
   }
 
   render() {
     return (
-      <div className="app" >
+      <div className="app p-3 mb-2 bg-dark text-black" >
         <Header />
         <Switch>
           <Route exact path='/'>
-            <Filters handleSearch={this.handleSearch} />
-            <CharacterList charactersData={this.filterCharacters()} />
+            <Home
+              handleSearch={this.handleSearch}
+              charactersData={this.filterCharacters()}
+            />
           </Route>
           <Route path='/character/:id' render={this.renderCharacterDetail} />
         </Switch>

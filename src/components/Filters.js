@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+
 
 const Filters = (props) => {
     const handleSearch = (ev) => {
@@ -10,10 +11,12 @@ const Filters = (props) => {
     const preventDefault = ev => ev.preventDefault();
 
     return (
-        <form onSubmit={preventDefault} action="POST">
-            <input onChange={handleSearch} type="text" placeholder='Hola estoy aqui' />
+        <form className="form-group" onSubmit={preventDefault} action="POST">
+            <input className="form-control" onChange={handleSearch} type="text" placeholder='Busca tu personaje' />
         </form>
     );
 };
+
+//FALTA PROPTYPES
 
 export default Filters;
