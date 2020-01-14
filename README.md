@@ -22,6 +22,8 @@ Para el desarrollo de este ejercicio hemos utilizado la siguiente API: https://r
 
 ### FUNCIONALIDADES React. 
 #### PRIMER PASO: CREAR LOS COMPONENTES.
+![Componentes](src/images/captura.png)
+
  _ App
     |_Header
     |_ Home 
