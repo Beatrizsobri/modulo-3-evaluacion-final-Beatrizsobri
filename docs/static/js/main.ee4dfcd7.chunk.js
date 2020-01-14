@@ -1,2 +1,0 @@
-(this.webpackJsonpreactadalab=this.webpackJsonpreactadalab||[]).push([[0],{3:function(a,e,t){a.exports=t(9)},8:function(a,e,t){},9:function(a,e,t){"use strict";t.r(e);var n=t(0),r=t.n(n),c=t(2),o=t.n(c);t(8);var s=function(){return r.a.createElement("div",{className:"app"},"holaaaa")};o.a.render(r.a.createElement(s,null),document.getElementById("root"))}},[[3,1,2]]]);
-//# sourceMappingURL=main.ee4dfcd7.chunk.js.map
