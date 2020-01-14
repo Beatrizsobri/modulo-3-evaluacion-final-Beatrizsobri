@@ -11,6 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       search: '',
+      especie: '',
       characters: [],
     };
     this.handleSearch = this.handleSearch.bind(this);
@@ -20,18 +21,19 @@ class App extends Component {
 
   handleSearch(data) {
     this.setState({
-      search: data.value
+      [data.id]: data.value
     })
   }
   filterCharacters() {
     return this.state.characters
       .filter(character => character.name.toLowerCase().includes(this.state.search.toLowerCase()))
-      .filter(character => character.name.toLowerCase().includes(this.state.search.toLowerCase()));
+      .filter(character => character.species.toLowerCase().includes(this.state.especie.toLowerCase()));
   }
 
   resetSearch() {
     this.setState({
-      search: ''
+      search: '',
+      especie: ''
     })
   }
 
@@ -52,9 +54,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.filterCharacters())
+    console.log(this.state.especie)
     return (
-      <div className="app p-3 mb-10" >
+      <div >
         <Header />
         <Switch>
           <Route exact path='/'>
@@ -63,6 +65,7 @@ class App extends Component {
               charactersData={this.filterCharacters()}
               value={this.state.search}
               resetSearch={this.resetSearch}
+              especie={this.state.especie}
             />
           </Route>
           <Route path='/character/:id' render={this.renderCharacterDetail} />

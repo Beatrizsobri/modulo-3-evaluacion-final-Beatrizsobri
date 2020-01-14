@@ -25,10 +25,10 @@ const CharacterDetail = props => {
                 <div className="description--text">
                     <h3 className="card--title">{name}</h3>
                     <ul className="card--list">
-                        <li className="card-text">Status:{isDead}</li>
-                        <li className="card-text">Species: {species}</li>
-                        <li className="card-text">Origin: {origin.name}</li>
-                        <li className="card-text">Episodes: {episode.length} </li>
+                        <li >Status:{isDead}</li>
+                        <li >Species: {species}</li>
+                        <li >Origin: {origin.name}</li>
+                        <li >Episodes: {episode.length} </li>
                     </ul>
                 </div>
             </div>
