@@ -18,6 +18,14 @@ const Filters = props => {
                 <input className="form__input" name="search" id="search" onChange={handleSearch} type="text" placeholder='Escribe aquí mozuel@!' value={props.value} />
                 <button className="form__button" onClick={props.resetSearch}>Borrar búsqueda</button>
             </div>
+            <label className="form__label" htmlFor="especie">Especie: </label>
+            <div className="form__container">
+                <input id="especie" type="radio" value="human" name="human" />
+                <div>Human</div>
+                <input id="especie" type="radio" value="alien" name="alien" />
+                <div>Alien</div>
+            </div>
+
         </form>
     );
 };

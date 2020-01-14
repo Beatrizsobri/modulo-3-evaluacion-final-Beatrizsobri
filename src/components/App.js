@@ -25,6 +25,7 @@ class App extends Component {
   }
   filterCharacters() {
     return this.state.characters
+      .filter(character => character.name.toLowerCase().includes(this.state.search.toLowerCase()))
       .filter(character => character.name.toLowerCase().includes(this.state.search.toLowerCase()));
   }
 

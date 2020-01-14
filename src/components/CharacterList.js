@@ -6,7 +6,7 @@ import Emoji from "react-emoji-render";
 
 
 const CharacterList = props => {
-    const isExistingCharacter = props.charactersData.length === 0 ? <h3 className="alert">¡Loco! <Emoji text=":satisfied:" /> El personaje que buscas no éxiste en este universo. ¡Vuelve a probar!</h3> : ''
+    const isExistingCharacter = props.charactersData.length === 0 ? <h3 className="alert">¡Loco! <Emoji text=":satisfied:" />El personaje que buscas no éxiste en este universo. ¡Vuelve a probar!</h3> : ''
     const { charactersData } = props;
     return (
         < main className="">
