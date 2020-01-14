@@ -51,6 +51,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.filterCharacters())
     return (
       <div className="app p-3 mb-10" >
         <Header />
