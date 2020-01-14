@@ -14,7 +14,7 @@ const Filters = props => {
     return (
         <form className="form" onSubmit={preventDefault} action="POST">
             <label className="form__label" htmlFor="search">Busca un personaje:</label>
-            <div>
+            <div className="form__container">
                 <input className="form__input" name="search" id="search" onChange={handleSearch} type="text" placeholder='Escribe aquí mozuel@!' value={props.value} />
                 <button className="form__button" onClick={props.resetSearch}>Borrar búsqueda</button>
             </div>
