@@ -25,10 +25,7 @@ class CharacterCard extends Component {
 }
 
 CharacterCard.propTypes = {
-    id: PropTypes.string,
-    image: PropTypes.string,
-    name: PropTypes.string,
-    species: PropTypes.string,
+    characterData: PropTypes.object.isRequired
 }
 
 export default CharacterCard;

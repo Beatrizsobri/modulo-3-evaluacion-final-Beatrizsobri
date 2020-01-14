@@ -15,14 +15,10 @@ class App extends Component {
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
+    this.resetSearch = this.resetSearch.bind(this)
   }
-  componentDidMount() {
-    fetchRickyMorty().then(data => this.setState({
-      characters: data.results
-    }));
-  }
-  handleSearch(data) {
 
+  handleSearch(data) {
     this.setState({
       search: data.value
     })
@@ -30,6 +26,12 @@ class App extends Component {
   filterCharacters() {
     return this.state.characters
       .filter(character => character.name.toLowerCase().includes(this.state.search.toLowerCase()));
+  }
+
+  resetSearch() {
+    this.setState({
+      search: ''
+    })
   }
 
   renderCharacterDetail(props) {
@@ -42,6 +44,12 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    fetchRickyMorty().then(data => this.setState({
+      characters: data.results
+    }));
+  }
+
   render() {
     return (
       <div className="app p-3 mb-10" >
@@ -51,6 +59,8 @@ class App extends Component {
             <Home
               handleSearch={this.handleSearch}
               charactersData={this.filterCharacters()}
+              value={this.state.search}
+              resetSearch={this.resetSearch}
             />
           </Route>
           <Route path='/character/:id' render={this.renderCharacterDetail} />
