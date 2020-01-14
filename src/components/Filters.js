@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../stylesheets/filters.scss'
 
 const Filters = props => {
     const handleSearch = ev => {
@@ -11,10 +12,12 @@ const Filters = props => {
     const preventDefault = ev => ev.preventDefault();
 
     return (
-        <form className="form-group" onSubmit={preventDefault} action="POST">
-            <label htmlFor="search">Busca un personaje:</label>
-            <input className="form-control shadow-lg p-3 mb-5 bg-white rounded" name="search" id="search" onChange={handleSearch} type="text" placeholder='Escribe aquí mozuel@!' value={props.value} />
-            <button onClick={props.resetSearch}>Borrar búsqueda</button>
+        <form className="form" onSubmit={preventDefault} action="POST">
+            <label className="form__label" htmlFor="search">Busca un personaje:</label>
+            <div>
+                <input className="form__input" name="search" id="search" onChange={handleSearch} type="text" placeholder='Escribe aquí mozuel@!' value={props.value} />
+                <button className="form__button" onClick={props.resetSearch}>Borrar búsqueda</button>
+            </div>
         </form>
     );
 };

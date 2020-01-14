@@ -1,5 +1,6 @@
 @import "./normalize";
 
+
 .card {
     width: 80%;
     height: 60%;
@@ -19,7 +20,9 @@
     align-items: center;
 
 
+
     &__button {
+        margin-top: 10%;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -33,10 +36,7 @@
     }
 
     &__description {
-        height: 75%;
-        width: 80%;
-        border: white solid;
-        border-radius: 15%;
+        margin-top: 10%;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -44,25 +44,28 @@
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        background: rgba(41, 171, 175, 0.747);
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: center;
+        text-align: center;
+        background: #f0e14a;
+        width: 300px;
+        border-radius: 10%;
     }
 }
 
 .description {
     &--image {
-        height: 100%;
-
-
         &--details {
-            height: 100%
+            width: 300px;
+            height: 300px;
+            border-top-left-radius: 10%;
+            border-top-right-radius: 10%;
         }
     }
 
     &--text {
-        color: white;
+        color: #24325FFF;
     }
 }
 
@@ -70,4 +73,40 @@
     color: white;
     background: transparent;
     font-size: 20px;
+}
+
+
+@media all and (min-width:100px) {
+    .card {
+        &__description {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            width: 450px;
+            height: 300px;
+        }
+    }
+
+    .description {
+        &--image {
+            &--details {
+                width: 300px;
+                height: 300px;
+                border-bottom-left-radius: 10%;
+                border-top-right-radius: 0%;
+
+            }
+        }
+
+        &--text {
+            margin: auto;
+        }
+
+
+    }
+
 }
