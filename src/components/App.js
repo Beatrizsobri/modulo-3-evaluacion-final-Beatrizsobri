@@ -13,27 +13,56 @@ class App extends Component {
       search: '',
       especie: '',
       characters: [],
+      origins: [],
+      location: '',
+      gender: ''
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
-    this.resetSearch = this.resetSearch.bind(this)
+    this.resetSearch = this.resetSearch.bind(this);
+    this.handleOrigin = this.handleOrigin.bind(this)
   }
 
   handleSearch(data) {
+    console.log(data)
+
     this.setState({
       [data.id]: data.value
     })
   }
+  handleOrigin(ev) {
+    const origin = ev.target.value;
+    this.setState((prevState) => {
+      const originIndex = prevState.origins.indexOf(origin);
+      if (originIndex < 0) {
+        prevState.origins.push(origin);
+      } else {
+        prevState.origins.splice(originIndex, 1);
+
+      }
+      return {
+        origins: prevState.origins
+      }
+    }
+    )
+  }
   filterCharacters() {
     return this.state.characters
       .filter(character => character.name.toLowerCase().includes(this.state.search.toLowerCase()))
-      .filter(character => character.species.toLowerCase().includes(this.state.especie.toLowerCase()));
+      .filter(character => character.species.toLowerCase().includes(this.state.especie.toLowerCase()))
+      // .filter(character => character.location.name.toLowerCase().includes(this.state.location.toLowerCase()))
+      .filter(character => character.gender.toLowerCase().includes(this.state.gender.toLowerCase()))
   }
+
+
 
   resetSearch() {
     this.setState({
       search: '',
-      especie: ''
+      especie: '',
+      origins: [],
+      location: '',
+      gender: ''
     })
   }
 
@@ -54,9 +83,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.especie)
+    console.log(this.state.gender)
     return (
-      <div >
+      < div >
         <Header />
         <Switch>
           <Route exact path='/'>
@@ -66,11 +95,12 @@ class App extends Component {
               value={this.state.search}
               resetSearch={this.resetSearch}
               especie={this.state.especie}
+              handleOrigin={this.handleOrigin}
             />
           </Route>
           <Route path='/character/:id' render={this.renderCharacterDetail} />
         </Switch>
-      </div>
+      </div >
     );
   }
 }

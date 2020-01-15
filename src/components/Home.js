@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 
 
 const Home = props => {
-    const { handleSearch, charactersData, value, resetSearch, especie } = props
+    const { handleSearch, charactersData, value, resetSearch, especie, handleOrigin } = props
     return (
         <Fragment >
-            <Filters handleSearch={handleSearch} value={value} resetSearch={resetSearch} especie={especie} />
+            <Filters handleSearch={handleSearch} value={value} resetSearch={resetSearch} especie={especie} handleOrigin={handleOrigin} />
             <CharacterList charactersData={charactersData} />
         </Fragment>
     )
@@ -20,6 +20,8 @@ Home.propTypes = {
     handleSearch: PropTypes.func.isRequired,
     resetSearch: PropTypes.func.isRequired,
     especie: PropTypes.string.isRequired,
+    handleOrigin: PropTypes.func.isRequired,
+
 }
 
 
